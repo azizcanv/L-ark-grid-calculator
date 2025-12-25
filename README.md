@@ -77,4 +77,4 @@ Example:
 ---
 
 ## Credits
-Original template and inspiration by **u/skyhawkx3 (Reddit)**.
+Original template and inspiration by **u/skyhawkx3 (Reddit&GitHub)**.
