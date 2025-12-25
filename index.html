@@ -259,6 +259,42 @@
 
   label { font-size: 13px; color: var(--text-muted); cursor: pointer; }
 
+  .gem-dot{
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    display: inline-grid;
+    place-items: center;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: .02em;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(0,0,0,0.22);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.45);
+    color: rgba(255,255,255,0.92);
+  }
+  [data-theme="light"] .gem-dot:not(.gem-A):not(.gem-B):not(.gem-C):not(.gem-D):not(.gem-E):not(.gem-F):not(.gem-G):not(.gem-H):not(.gem-K):not(.gem-L){
+    background: rgba(255,255,255,0.65);
+    border-color: rgba(27,34,48,0.14);
+    box-shadow: inset 0 0 10px rgba(27,34,48,0.06);
+    color: rgba(27,34,48,0.92);
+    text-shadow: none;
+  }
+  [data-theme="light"] .gem-dot.gem-A,
+  [data-theme="light"] .gem-dot.gem-B,
+  [data-theme="light"] .gem-dot.gem-C,
+  [data-theme="light"] .gem-dot.gem-D,
+  [data-theme="light"] .gem-dot.gem-E,
+  [data-theme="light"] .gem-dot.gem-F,
+  [data-theme="light"] .gem-dot.gem-G,
+  [data-theme="light"] .gem-dot.gem-H,
+  [data-theme="light"] .gem-dot.gem-K,
+  [data-theme="light"] .gem-dot.gem-L{
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+    filter: saturate(1.15) contrast(1.05);
+  }
+
   .core-config {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -688,18 +724,6 @@
       0 0 22px rgba(120,190,255,0.08);
   }
 
-  #classResults .core-box{
-    box-shadow:
-      inset 0 0 18px rgba(0,0,0,0.45),
-      0 0 22px rgba(255,160,80,0.08);
-  }
-
-  #generalResults .core-box{
-    box-shadow:
-      inset 0 0 18px rgba(0,0,0,0.45),
-      0 0 22px rgba(120,190,255,0.08);
-  }
-
   .core-header {
     display: flex;
     justify-content: space-between;
@@ -778,27 +802,6 @@
 
   .core-header strong { color: var(--la-highlight); font-family: 'Cinzel', serif; }
 
-  .rarity-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 10px;
-    border-radius: 999px;
-    font-size: 11px;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(0,0,0,0.25);
-    color: rgba(225,230,235,0.92);
-    letter-spacing: 0.02em;
-  }
-  [data-theme="light"] .rarity-badge {
-    background: rgba(27,34,48,0.04);
-    border-color: rgba(27,34,48,0.12);
-    color: rgba(27,34,48,0.86);
-  }
-  .badge-Legendary { border-color: rgba(212,143,69,0.45); }
-  .badge-Relic     { border-color: rgba(181,107,51,0.45); }
-  .badge-Ancient   { border-color: rgba(214,194,91,0.50); }
-
   .meta-right { text-align: right; min-width: 210px; }
 
   .progress-wrap {
@@ -842,14 +845,18 @@
     gap: 4px;
     align-items: center;
     justify-content: center;
-    width: 84px;
-    height: 72px;
+
+    width: 76px;
+    height: 76px;
     padding: 4px;
+
     border: 1px solid rgba(255,255,255,0.12);
     color: #fff;
     font-weight: 700;
     font-size: 14px;
-    border-radius: 16px;
+
+    border-radius: 999px;
+
     position: relative;
     box-shadow: inset 0 0 12px rgba(0,0,0,0.75), 0 8px 14px rgba(0,0,0,0.28);
     text-shadow: 0 1px 2px #000;
@@ -870,8 +877,8 @@
   .gem-K { background: radial-gradient(circle at 30% 30%, #9c27b0, #4a148c); border-color: #ce93d8; }
   .gem-L { background: radial-gradient(circle at 30% 30%, #78909c, #37474f); border-color: #b0bec5; }
 
-  .gem-type { font-size: 18px; font-family: 'Cinzel', serif; }
-  .gem-sub  { font-size: 10px; font-weight: 400; opacity: 0.9; text-transform: uppercase; letter-spacing: 0.5px; }
+  .gem-type { font-size: 20px; font-family: 'Cinzel', serif; }
+  .gem-sub  { font-size: 10px; font-weight: 400; opacity: 0.92; text-transform: uppercase; letter-spacing: 0.5px; }
 
   .badge {
     background: rgba(0,0,0,0.45);
@@ -888,6 +895,41 @@
     color: rgba(27,34,48,0.78);
   }
   .remaining-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+
+  .suggest-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+  }
+
+  .suggest-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,0.10);
+    background: rgba(0,0,0,0.22);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.35);
+  }
+
+  [data-theme="light"] .suggest-pill{
+    background: rgba(27,34,48,0.04);
+    border-color: rgba(27,34,48,0.12);
+    box-shadow: inset 0 0 12px rgba(27,34,48,0.06);
+  }
+
+  .suggest-pill .qty{
+    font-size:12px;
+    color: rgba(225,230,235,0.75);
+    font-weight:700;
+    letter-spacing: .02em;
+  }
+
+  [data-theme="light"] .suggest-pill .qty{
+    color: rgba(27,34,48,0.70);
+  }
 
   .unused-block {
     margin-top: 10px;
@@ -962,21 +1004,21 @@
 
   <div class="page">
     <div class="half left">
-      <h2 class="section-title">Class Inventory</h2>
+      <h2 class="section-title">Order Astrogems</h2>
 
-      <table aria-label="Class inventory">
+      <table aria-label="Order astrogems inventory">
         <thead><tr><th>Gem</th><th>Will</th><th>Pts</th><th>Qty</th></tr></thead>
         <tbody>
-          <tr><td><span style="color:#ff5252">A</span></td><td>3</td><td>5</td><td><input id="class_A" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#ff8c42">B</span></td><td>3</td><td>4</td><td><input id="class_B" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#ffd54f">C</span></td><td>3</td><td>3</td><td><input id="class_C" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#9ccc65">D</span></td><td>4</td><td>5</td><td><input id="class_D" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#4caf50">E</span></td><td>4</td><td>4</td><td><input id="class_E" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#26a69a">F</span></td><td>4</td><td>3</td><td><input id="class_F" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#29b6f6">G</span></td><td>5</td><td>5</td><td><input id="class_G" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#3f51b5">H</span></td><td>5</td><td>4</td><td><input id="class_H" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#9c27b0">K</span></td><td>5</td><td>3</td><td><input id="class_K" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#78909c">L</span></td><td>6</td><td>5</td><td><input id="class_L" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-A">A</span></td><td>3</td><td>5</td><td><input id="class_A" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-B">B</span></td><td>3</td><td>4</td><td><input id="class_B" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-C">C</span></td><td>3</td><td>3</td><td><input id="class_C" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-D">D</span></td><td>4</td><td>5</td><td><input id="class_D" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-E">E</span></td><td>4</td><td>4</td><td><input id="class_E" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-F">F</span></td><td>4</td><td>3</td><td><input id="class_F" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-G">G</span></td><td>5</td><td>5</td><td><input id="class_G" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-H">H</span></td><td>5</td><td>4</td><td><input id="class_H" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-K">K</span></td><td>5</td><td>3</td><td><input id="class_K" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-L">L</span></td><td>6</td><td>5</td><td><input id="class_L" type="number" min="0" value="0"></td></tr>
         </tbody>
       </table>
 
@@ -994,21 +1036,21 @@
     </div>
 
     <div class="half right">
-      <h2 class="section-title">General Inventory</h2>
+      <h2 class="section-title">Chaos Astrogems</h2>
 
-      <table aria-label="General inventory">
+      <table aria-label="Chaos astrogems inventory">
         <thead><tr><th>Gem</th><th>Will</th><th>Pts</th><th>Qty</th></tr></thead>
         <tbody>
-          <tr><td><span style="color:#ff5252">A</span></td><td>3</td><td>5</td><td><input id="general_A" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#ff8c42">B</span></td><td>3</td><td>4</td><td><input id="general_B" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#ffd54f">C</span></td><td>3</td><td>3</td><td><input id="general_C" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#9ccc65">D</span></td><td>4</td><td>5</td><td><input id="general_D" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#4caf50">E</span></td><td>4</td><td>4</td><td><input id="general_E" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#26a69a">F</span></td><td>4</td><td>3</td><td><input id="general_F" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#29b6f6">G</span></td><td>5</td><td>5</td><td><input id="general_G" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#3f51b5">H</span></td><td>5</td><td>4</td><td><input id="general_H" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#9c27b0">K</span></td><td>5</td><td>3</td><td><input id="general_K" type="number" min="0" value="0"></td></tr>
-          <tr><td><span style="color:#78909c">L</span></td><td>6</td><td>5</td><td><input id="general_L" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-A">A</span></td><td>3</td><td>5</td><td><input id="general_A" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-B">B</span></td><td>3</td><td>4</td><td><input id="general_B" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-C">C</span></td><td>3</td><td>3</td><td><input id="general_C" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-D">D</span></td><td>4</td><td>5</td><td><input id="general_D" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-E">E</span></td><td>4</td><td>4</td><td><input id="general_E" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-F">F</span></td><td>4</td><td>3</td><td><input id="general_F" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-G">G</span></td><td>5</td><td>5</td><td><input id="general_G" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-H">H</span></td><td>5</td><td>4</td><td><input id="general_H" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-K">K</span></td><td>5</td><td>3</td><td><input id="general_K" type="number" min="0" value="0"></td></tr>
+          <tr><td><span class="gem-dot gem-L">L</span></td><td>6</td><td>5</td><td><input id="general_L" type="number" min="0" value="0"></td></tr>
         </tbody>
       </table>
 
@@ -1036,12 +1078,12 @@
 
   <div id="resultsArea">
     <div class="results-half" id="classResults">
-      <h3 class="res-title">Class Optimization</h3>
+      <h3 class="res-title">Order Optimization</h3>
       <div id="classResultsInner" class="small">Pending calculation...</div>
     </div>
 
     <div class="results-half" id="generalResults">
-      <h3 class="res-title">General Optimization</h3>
+      <h3 class="res-title">Chaos Optimization</h3>
       <div id="generalResultsInner" class="small">Pending calculation...</div>
     </div>
   </div>
@@ -1064,7 +1106,6 @@ const ASTROGEMS = {
 const CORE_WILL = { Legendary: 12, Relic: 15, Ancient: 17 };
 const CORE_TARGET_CAP   = { Legendary: 14, Relic: 20, Ancient: 20 };
 const CORE_IDEAL_TARGET = { Legendary: 14, Relic: 17, Ancient: 17 };
-
 const MAX_SLOTS = 4;
 
 const GEM_WEIGHT = {
@@ -1076,16 +1117,27 @@ const GEM_WEIGHT = {
 
 const TOP_N = 300;
 
+const GEM_LABEL = {
+  A: 'S',
+  B: 'A',
+  C: 'B',
+  D: 'C',
+  E: 'D',
+  F: 'E',
+  G: 'F',
+  H: 'G',
+  K: 'H',
+  L: 'K'
+};
+
+function gemLabel(code){
+  return GEM_LABEL[code] || code;
+}
+
 function rarityIcon(rarity){
   if(rarity === 'Legendary') return '⭐';
   if(rarity === 'Relic') return '☾';
   return '☀';
-}
-
-function rarityOrbClass(rarity){
-  if(rarity === 'Legendary') return 'orb-legendary';
-  if(rarity === 'Relic') return 'orb-relic';
-  return 'orb-ancient';
 }
 
 function applyTheme(theme){
@@ -1330,6 +1382,8 @@ function generateCoreCombos(inv, maxWill) {
     finalResults.push(...combined);
   });
 
+  finalResults.sort((a,b)=> (b.points-a.points) || (a.will-b.will));
+
   return finalResults;
 }
 
@@ -1366,7 +1420,7 @@ function optimizeThreeCores(inv, coreConfigs, isAuto){
     return (targets[b] - targets[a]) || (a - b);
   });
 
-  const list0 = trimmed[0], list1 = trimmed[1], list2 = trimmed[2];
+  const [list0, list1, list2] = trimmed;
 
   for(let i0=0;i0<list0.length;i0++){
     const c0 = list0[i0];
@@ -1452,7 +1506,7 @@ function buildGemCards(combo){
     const c = t.toUpperCase();
     const info = ASTROGEMS[c];
     return `<div class="gem-card gem-${c}">
-      <div class="gem-type">${c}</div>
+      <div class="gem-type">${gemLabel(c)}</div>
       <div class="gem-sub">${info.points}★ ${info.will}W</div>
     </div>`;
   }).join('');
@@ -1480,6 +1534,121 @@ function rarityIconSVG(rarity){
   return `<svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="M15.6 3.2c-4.1 1.1-7.1 4.9-7.1 9.4 0 4.7 3.2 8.6 7.7 9.5-1.1.5-2.4.8-3.7.8-4.9 0-8.9-4-8.9-8.9 0-4.4 3.2-8 7.4-8.7.5-.1 1-.1 1.5-.1-.3.2-.6.0-.9 0z"/>
   </svg>`;
+}
+
+function getTargets(coreConfigs, isAuto){
+  const hardCaps = coreConfigs.map(c => CORE_TARGET_CAP[c.rarity] ?? 20);
+  return coreConfigs.map((c, i) => {
+    const cap = hardCaps[i];
+    const autoTarget = CORE_IDEAL_TARGET[c.rarity] ?? cap;
+    const chosen = isAuto ? autoTarget : (c.target ?? autoTarget);
+    return Math.min(chosen, cap);
+  });
+}
+
+function getAchievedPoints(best, coreConfigs){
+  const hardCaps = coreConfigs.map(c => CORE_TARGET_CAP[c.rarity] ?? 20);
+  return best.combos.map((c, i) => Math.min(c.points, hardCaps[i]));
+}
+
+function meetsAllTargets(best, coreConfigs, isAuto){
+  const targets = getTargets(coreConfigs, isAuto);
+  const achieved = getAchievedPoints(best, coreConfigs);
+  return achieved.every((v, i) => v >= targets[i]);
+}
+
+const CRAFT_CANDIDATES = Object.keys(ASTROGEMS); // S,A,B,C,D,E,F,G,H,K
+
+function suggestCraftAdditions(inv, coreConfigs, isAuto, maxExtra=8){
+  const base = optimizeThreeCores(inv, coreConfigs, isAuto);
+  if(base?.best && meetsAllTargets(base.best, coreConfigs, isAuto)){
+    return { adds: null, solved: true, usedN: 0 };
+  }
+
+  const targets = getTargets(coreConfigs, isAuto);
+
+  function computeOverSum(best){
+    const achieved = getAchievedPoints(best, coreConfigs);
+    return achieved.reduce((acc, v, i) => acc + Math.max(0, v - targets[i]), 0);
+  }
+
+  function computeAddStats(adds){
+    let addWill = 0, addPts = 0;
+    for(const [t,c] of Object.entries(adds)){
+      addWill += (ASTROGEMS[t]?.will || 0) * c;
+      addPts  += (ASTROGEMS[t]?.points || 0) * c;
+    }
+    return { addWill, addPts };
+  }
+
+  for(let n=1; n<=maxExtra; n++){
+    const adds = {};
+    let bestAdds = null;
+    let bestKey = null;
+
+    function consider(){
+      const inv2 = {...inv};
+      for(const t in adds) inv2[t] = (inv2[t]||0) + adds[t];
+
+      const res = optimizeThreeCores(inv2, coreConfigs, isAuto);
+      if(!res?.best) return;
+      if(!meetsAllTargets(res.best, coreConfigs, isAuto)) return;
+
+      const overSum = computeOverSum(res.best);
+      const { addWill, addPts } = computeAddStats(adds);
+
+      const key = [overSum, addWill, addPts];
+
+      if(!bestKey){
+        bestKey = key;
+        bestAdds = {...adds};
+        return;
+      }
+
+      for(let i=0;i<key.length;i++){
+        if(key[i] < bestKey[i]) { bestKey = key; bestAdds = {...adds}; return; }
+        if(key[i] > bestKey[i]) return;
+      }
+    }
+
+    function dfs(startIdx, left){
+      if(left === 0){
+        consider();
+        return;
+      }
+      for(let i=startIdx; i<CRAFT_CANDIDATES.length; i++){
+        const t = CRAFT_CANDIDATES[i];
+        adds[t] = (adds[t]||0) + 1;
+        dfs(i, left-1);
+        adds[t]--;
+        if(adds[t]===0) delete adds[t];
+      }
+    }
+
+    dfs(0, n);
+
+    if(bestAdds){
+      return { adds: bestAdds, solved: true, usedN: n };
+    }
+  }
+
+  return { adds: null, solved: false, usedN: null };
+}
+
+function renderAddsPills(adds){
+  const entries = Object.entries(adds || {});
+  if(entries.length === 0) return '';
+
+  entries.sort((a,b)=>b[1]-a[1]);
+
+  return `<div class="suggest-row">
+    ${entries.map(([t,c]) => `
+      <div class="suggest-pill">
+        <span class="gem-dot gem-${t}">${gemLabel(t)}</span>
+        <span class="qty">×${c}</span>
+      </div>
+    `).join('')}
+  </div>`;
 }
 
 function renderResults(containerId, resultObj, inv, coreConfigs, isAuto){
@@ -1548,18 +1717,54 @@ function renderResults(containerId, resultObj, inv, coreConfigs, isAuto){
   const remaining = computeRemaining(inv, best.counts);
   const badges = Object.keys(remaining)
     .filter(k=>remaining[k]>0)
-    .map(k => `<div class="badge">${k}: ${remaining[k]}</div>`)
+    .map(k => `<div class="badge">${gemLabel(k)}: ${remaining[k]}</div>`)
     .join('');
 
   html += `
-    <details class="unused-block" ${badges ? '' : 'open'}>
+    <details class="unused-block">
       <summary>
         <span class="unused-title"><span class="sigil">✦</span> Unused Gems</span>
-        <span class="unused-hint">${badges ? 'Tap to expand' : '(None)'}</span>
+        <span class="unused-hint">${badges ? 'Tap to expand' : 'None'}</span>
       </summary>
       <div class="remaining-badges">${badges || '<span class="small">None</span>'}</div>
     </details>
   `;
+
+  const targets = getTargets(coreConfigs, isAuto);
+  const achieved = getAchievedPoints(best, coreConfigs);
+  const missing = achieved.map((v,i)=>Math.max(0, targets[i]-v));
+  const totalMissing = missing.reduce((a,b)=>a+b,0);
+
+  if(totalMissing > 0){
+    const suggestion = suggestCraftAdditions(inv, coreConfigs, isAuto, 8);
+    if(suggestion.solved && suggestion.adds){
+      html += `
+        <div class="unused-block" style="margin-top:12px;">
+          <div class="unused-title" style="margin-bottom:8px;">
+            <span class="sigil">✦</span> Add / Craft Suggestion (reach all targets)
+          </div>
+          <div class="small" style="color:var(--text-main); margin-top:0;">
+            Missing: ${missing.map((m,i)=>`Core ${i+1}: ${m}`).join(' • ')}
+          </div>
+
+          ${renderAddsPills(suggestion.adds)}
+
+          <div class="small" style="margin-top:8px;">
+            (Minimal-add search, up to 8 extra gems.)
+          </div>
+        </div>
+      `;
+    } else {
+      html += `
+        <div class="unused-block" style="margin-top:12px;">
+          <div class="unused-title"><span class="sigil">✦</span> Add / Craft Suggestion</div>
+          <div class="small" style="margin-top:8px;">
+            Couldn’t guarantee full-target within the current search limit (max 8 extra gems).
+          </div>
+        </div>
+      `;
+    }
+  }
 
   container.innerHTML = html;
 }
@@ -1593,6 +1798,11 @@ window.onload = function(){
 
   buildCoreAccordion('class_core_accordion','class');
   buildCoreAccordion('general_core_accordion','general');
+
+  document.querySelectorAll('table tbody .gem-dot').forEach(el => {
+    const code = (el.textContent || '').trim().toUpperCase();
+    el.textContent = gemLabel(code);
+  });
 
   calculateBoth();
 };
