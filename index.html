@@ -1647,10 +1647,14 @@ function suggestCraftAdditions(inv, coreConfigs, isAuto, maxExtra=8){
 }
 
 function renderAddsPills(adds){
-  const entries = Object.entries(adds || {});
+  const entries = Object.entries(adds || {})
+    .filter(([t,c]) => (c || 0) > 0);
+  
   if(entries.length === 0) return '';
 
-  entries.sort((a,b)=>b[1]-a[1]);
+  const order = Object.keys(ASTROGEMS);
+  entries.sort((a,b)=> order.indexOf(a[0]) - order.indexOf(b[0]));
+  // entries.sort((a,b)=>b[1]-a[1]);
 
   return `<div class="suggest-row">
     ${entries.map(([t,c]) => `
@@ -1726,18 +1730,15 @@ function renderResults(containerId, resultObj, inv, coreConfigs, isAuto){
   }
 
   const remaining = computeRemaining(inv, best.counts);
-  const badges = Object.keys(remaining)
-    .filter(k=>remaining[k]>0)
-    .map(k => `<div class="badge">${gemLabel(k)}: ${remaining[k]}</div>`)
-    .join('');
+  const unusedPills = renderAddsPills(remaining);
 
   html += `
     <details class="unused-block">
       <summary>
         <span class="unused-title"><span class="sigil">✦</span> Unused Gems</span>
-        <span class="unused-hint">${badges ? 'Tap to expand' : 'None'}</span>
+        <span class="unused-hint">${unusedPills ? 'Tap to expand' : 'None'}</span>
       </summary>
-      <div class="remaining-badges">${badges || '<span class="small">None</span>'}</div>
+      <div>${unusedPills || '<span class="small">None</span>'}</div>
     </details>
   `;
 
@@ -1820,4 +1821,3 @@ window.onload = function(){
 </script>
 </body>
 </html>
-
