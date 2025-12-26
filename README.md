@@ -1,5 +1,7 @@
 # Ark Grid Calculator
 
+🔗 **Live Demo:** https://bit.ly/arkgrid
+
 A lightweight web tool to optimize Ark Passive Core gem layouts using your inventory.
 
 ---
@@ -77,4 +79,4 @@ Example:
 ---
 
 ## Credits
-Original template and inspiration by **u/skyhawkx3 (Reddit&GitHub)**.
+Original template and inspiration by **u/skyhawkx3 (Reddit & GitHub)**.
