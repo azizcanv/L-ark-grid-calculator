@@ -4,7 +4,6 @@
 
 A lightweight web tool to optimize Ark Passive Core gem layouts using your inventory.
 
----
 
 ## How It Works
 
@@ -22,7 +21,6 @@ It then selects the best possible combination by:
 - Maximizing total points
 - Using the least willpower when ties occur
 
----
 
 ## How to Use
 
@@ -67,7 +65,6 @@ The suggestion represents:
 Example:
 - `A × 1` means crafting or adding **one A-tier gem** is sufficient to reach all targets.
 
----
 
 ## Notes
 - Results always respect your inventory limits.
@@ -76,7 +73,6 @@ Example:
 - Add / Craft suggestions do **not** modify your inventory — they are informational only.
 - The site may continue to receive updates and improvements over time.
 
----
 
 ## Credits
 Original template and inspiration by **u/skyhawkx3 (Reddit & GitHub)**.
